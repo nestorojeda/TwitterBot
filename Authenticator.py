@@ -1,17 +1,18 @@
+import tweepy
+
+
 class Authenticator:
+    def __init__(self):
+        consumer_key = '' ;
+        consumer_secret = ' ';
+        access_token = '';
+        access_token_secret = ' ';
 
-    def __init__(self, key, skey,token, stoken):
-        self.consumer_key = key;
-        self.consumer_secret = skey;
-        self.access_token = token;
-        self.access_token_secret = stoken;
-        self.auth = tweepy.OAuthHandler(consumer_key, consumer_secret);
-
-    def authenticate(self):
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret);
         auth.set_access_token(access_token, access_token_secret);
+        api = tweepy.API(auth);
 
     def initGetApiUser(self):
-        api = tweepy.API(auth);
-        user = api.me();
+        user = self.api.me();
         print(user.name);
-        return api;
+        return self.api;

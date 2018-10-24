@@ -1,13 +1,18 @@
-class Searcher:
+import tweepy
+from time import sleep;
 
-    def __init__ (self, terms[],nTweets):
+class Searcher:
+    def __init__(self, terms, nTweets):
         self.searcherTerms = terms;
         self.nOfTweets = nTweets;
 
     def start(self, api):
-        for term in searcherTerms:
-            printer(term);
-            for tweet in tweepy.Cursor(api.search, term).items(nOfTweets):
+        for term in self.searcherTerms:
+            print("--------------------------\n")
+            print("         Searching       ")
+            print(term)
+            print("\n--------------------------")
+            for tweet in tweepy.Cursor(api.search, term).items(self.nOfTweets):
                 try:
                     tweet.retweet()
                     tweet.favorite()
@@ -20,8 +25,4 @@ class Searcher:
 
         sleep(100);
 
-    def printer(self, term):
-        print("--------------------------\n")
-        print("         Searching       ")
-        print(term)
-        print("\n--------------------------")
+

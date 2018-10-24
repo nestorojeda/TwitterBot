@@ -1,13 +1,10 @@
-from time import sleep;
-import tweepy;
-import Authenticator;
-import Searcher;
+from Authenticator import Authenticator
+from Searcher import Searcher
 
-authO = Authenticator();
-authO.authenticate();
+authO = Authenticator()
+sa = "gofio", "LPAstorm"
+searcher = Searcher(sa,500)
 
-searcher = Searcher();
 
-def startBot(searcher, api):
-    while True:
-        searcher.start(api);
+while True:
+    searcher.start(authO.initGetApiUser())
