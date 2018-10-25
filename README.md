@@ -9,6 +9,5 @@ It is mandatory to create 2 files:
                  ConsumerAPI secret key
                  Access token
                  Access token secret
-                 
     queries:     With each keyword in a different line
  
