@@ -1,5 +1,5 @@
 # TwitterBot
-###Search and retweet
+Search and retweet
 
 TwitterBot is a simple implementation of a bot that search some keywords and retweet tweets matching the keywords. It is mandatory to create 2 files:
 
